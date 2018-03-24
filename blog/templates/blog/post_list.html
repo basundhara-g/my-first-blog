@@ -3,20 +3,16 @@
         <title>Basundhara's blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Basundhara's Blog</a></h1>
-        </div>
+      <div>
+  <h1><a href="/">Basundhara's Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 24.03.2018, 13:52</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Welcome to my blog.</p>
-        </div>
-
-        <div>
-            <p>published: 24.03.2018, 13:54</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This is the first website I created.</p>
-        </div>
+{% for post in posts %}
+  <div>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+{% endfor %}
     </body>
 </html>
